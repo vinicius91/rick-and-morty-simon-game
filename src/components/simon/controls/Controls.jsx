@@ -17,10 +17,10 @@ import {
 } from './Controls.styles';
 
 type Props = {
-  score?: number,
-  isStrict?: boolean,
-  isActive?: boolean,
-  isOn?: boolean,
+  score: number,
+  isStrict: boolean,
+  isActive: boolean,
+  isOn: boolean,
   strictClickHandler: () => void,
   startClickHandler: () => void,
   gameToggleHandler: () => void
@@ -60,13 +60,6 @@ const Controls = (props: Props) => {
       </ActionsWrapper>
     </Wrapper>
   );
-};
-
-Controls.defaultProps = {
-  score: 0,
-  isStrict: false,
-  isActive: false,
-  isOn: false
 };
 
 export default Controls;

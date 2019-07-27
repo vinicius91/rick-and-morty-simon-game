@@ -1,8 +1,10 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Character from './character/Character';
 import Controls from './controls/Controls';
 import { Wrapper, Line } from './Simon.styles';
+import { gameActions } from '../../store/actions/game';
 
 class Simon extends Component {
   state = {
@@ -11,25 +13,7 @@ class Simon extends Component {
       isStrict: false,
       isActive: false,
       isOn: false
-    },
-    characters: [
-      {
-        id: 1,
-        imageUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
-      },
-      {
-        id: 2,
-        imageUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg'
-      },
-      {
-        id: 3,
-        imageUrl: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
-      },
-      {
-        id: 4,
-        imageUrl: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg'
-      }
-    ]
+    }
   };
 
   gameToggleHandler = () => {
@@ -42,12 +26,7 @@ class Simon extends Component {
   };
 
   startClickHandler = () => {
-    this.setState(state => ({
-      controls: {
-        ...state.controls,
-        isActive: !state.controls.isActive
-      }
-    }));
+    this.props.startGame();
   };
 
   strictClickHandler = () => {
@@ -63,19 +42,25 @@ class Simon extends Component {
     console.log('Clicked character with Id: ', id);
   };
 
-  renderCharacters = simonColors => {
-    const { characters } = this.state;
-    return characters.map((character, i) => (
-      <Character
-        imageUrl={character.imageUrl}
-        id={character.id}
-        key={character.id}
-        color={simonColors[i].base}
-        colorDark={simonColors[i].dark}
-        active={false}
-        characterClickHandler={this.characterClickHandler}
-      />
-    ));
+  renderCharacters = (characters, simonColors) => {
+    if (
+      characters &&
+      simonColors &&
+      characters.length > 0 &&
+      simonColors.length > 0
+    ) {
+      return characters.map((character, i) => (
+        <Character
+          imageUrl={character.imageUrl}
+          id={character.id}
+          key={character.id}
+          color={simonColors[i].base}
+          colorDark={simonColors[i].dark}
+          active={false}
+          characterClickHandler={this.characterClickHandler}
+        />
+      ));
+    }
   };
 
   render() {
@@ -98,22 +83,36 @@ class Simon extends Component {
       }
     ];
 
-    const { controls } = this.state;
+    const {
+      characters,
+      game,
+      toggleGame,
+      toggleGameMode,
+      startGame
+    } = this.props;
+    const { score, isStrict, isActive, isOn } = game;
 
     return (
       <Wrapper>
         <Line>
           <Controls
-            {...controls}
-            strictClickHandler={this.strictClickHandler}
-            startClickHandler={this.startClickHandler}
-            gameToggleHandler={this.gameToggleHandler}
+            score={score}
+            isStrict={isStrict}
+            isActive={isActive}
+            isOn={isOn}
+            strictClickHandler={toggleGameMode}
+            startClickHandler={startGame}
+            gameToggleHandler={toggleGame}
           />
         </Line>
-        <Line>{this.renderCharacters(simonColors)}</Line>
+        <Line>{this.renderCharacters(characters, simonColors)}</Line>
       </Wrapper>
     );
   }
 }
 
-export default Simon;
+const mapStateToProps = state => state;
+export default connect(
+  mapStateToProps,
+  gameActions
+)(Simon);
