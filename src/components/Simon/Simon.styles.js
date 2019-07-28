@@ -20,7 +20,6 @@ const wrapperBackground = css`
 
 export const Wrapper = styled.div`
   ${wrapperBackground}
-
   border-radius: 10px;
   display: flex;
   flex-flow: row wrap;

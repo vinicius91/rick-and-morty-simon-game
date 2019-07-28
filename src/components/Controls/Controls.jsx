@@ -21,9 +21,9 @@ type Props = {
   isStrict: boolean,
   isActive: boolean,
   isOn: boolean,
-  strictClickHandler: () => void,
-  startClickHandler: () => void,
-  gameToggleHandler: () => void
+  toggleGame: () => void,
+  toggleGameMode: () => void,
+  startGame: () => void
 };
 const Controls = (props: Props) => {
   const {
@@ -31,9 +31,9 @@ const Controls = (props: Props) => {
     isStrict,
     isActive,
     isOn,
-    strictClickHandler,
-    startClickHandler,
-    gameToggleHandler
+    toggleGame,
+    toggleGameMode,
+    startGame
   } = props;
   return (
     <Wrapper>
@@ -43,16 +43,16 @@ const Controls = (props: Props) => {
       </ScoreWrapper>
       <ActionsWrapper>
         <BtnWrapper>
-          <StartBtn active={isActive} onClick={startClickHandler} />
+          <StartBtn active={isActive} onClick={startGame} />
           <BtnLabel>START</BtnLabel>
         </BtnWrapper>
         <BtnWrapper>
-          <StrictBtn active={isStrict} onClick={strictClickHandler} />
+          <StrictBtn active={isStrict} onClick={toggleGameMode} />
           <BtnLabel>STRICT</BtnLabel>
         </BtnWrapper>
         <ToggleWrapper>
           <Label>OFF</Label>
-          <SwitchWrapper onClick={gameToggleHandler}>
+          <SwitchWrapper onClick={toggleGame}>
             <Switch active={isOn} />
           </SwitchWrapper>
           <Label>ON</Label>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 
-import Simon from './simon/Simon';
+import Simon from './Simon/Simon';
 
 const GlobalStyle = createGlobalStyle`
   body {

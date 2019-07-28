@@ -1,5 +1,4 @@
 // @flow
-import { bindActionCreators } from 'redux';
 
 import { gameActionTypes } from '../../types/game';
 
@@ -16,43 +15,33 @@ export const toggleGameMode = (): GameAction => ({
 export const startGame = (): GameAction => ({
   type: gameActionTypes.START_GAME
 });
+
 export const playSequence = (): GameAction => ({
   type: gameActionTypes.PLAY_SEQUENCE
 });
+
 export const startUserStage = (): GameAction => ({
   type: gameActionTypes.START_USER_STAGE
 });
+
 export const activateCharacter = (payload: number): GameAction => ({
   type: gameActionTypes.ACTIVATE_CHARACTER,
   payload
 });
+
 export const clickCharacter = (payload: number): GameAction => ({
   type: gameActionTypes.CLICK_CHARACTER,
   payload
 });
+
 export const winSequence = (): GameAction => ({
   type: gameActionTypes.WIN_SEQUENCE
 });
+
 export const loseSequence = (): GameAction => ({
   type: gameActionTypes.LOSE_SEQUENCE
 });
+
 export const resetGame = (): GameAction => ({
   type: gameActionTypes.RESET_GAME
 });
-
-export const gameActions = dispatch =>
-  bindActionCreators(
-    {
-      toggleGame,
-      toggleGameMode,
-      startGame,
-      playSequence,
-      startUserStage,
-      activateCharacter,
-      clickCharacter,
-      winSequence,
-      loseSequence,
-      resetGame
-    },
-    dispatch
-  );
