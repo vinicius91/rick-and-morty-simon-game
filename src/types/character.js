@@ -12,11 +12,25 @@ export type Character = {
 export type Characters = Array<Character>;
 
 export type CharacterState = {
-  +characters: Characters
+  +characters: Characters,
+  +loading: boolean
 };
 
-export type CharacterAction = {
-  type: 'ADD_CHARACTER',
-  +id: Id,
-  +imageUrl: ImageUrl
+export const characterActionTypes = {
+  FETCH_CHARACTER_START: 'FETCH_CHARACTER_START',
+  FETCH_CHARACTER_SUCCESS: 'FETCH_CHARACTER_SUCCESS',
+  FETCH_CHARACTER_ERROR: 'FETCH_CHARACTER_ERROR'
 };
+
+export type CharacterAction =
+  | {
+      type: characterActionTypes.FETCH_CHARACTER_START
+    }
+  | {
+      type: characterActionTypes.FETCH_CHARACTER_SUCCESS,
+      payload: Characters
+    }
+  | {
+      type: characterActionTypes.FETCH_CHARACTER_ERROR,
+      payload: string
+    };

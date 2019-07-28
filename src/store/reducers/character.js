@@ -1,26 +1,8 @@
 // @flow
 
-import { getCharacters } from '../../lib/characterService';
+import { characterActionTypes } from '../../types/character';
 
-import type {
-  Id,
-  ImageUrl,
-  Character,
-  Characters,
-  CharacterState
-} from '../../types/character';
-import type { Action } from '../../types';
-
-const createCharacter = (id: Id, imageUrl: ImageUrl): Character => ({
-  id,
-  imageUrl
-});
-
-export const fetchCharacters = () => {
-  return () => {
-    getCharacters().then(data => console.log(data));
-  };
-};
+import type { CharacterState, CharacterAction } from '../../types/character';
 
 const charactersInitialState: CharacterState = {
   characters: [
@@ -40,16 +22,21 @@ const charactersInitialState: CharacterState = {
       id: 4,
       imageUrl: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg'
     }
-  ]
+  ],
+  loading: false
 };
 
 const character = (
   state: CharacterState = charactersInitialState,
-  action: Action
-): Characters => {
+  action: CharacterAction
+): CharacterState => {
   switch (action.type) {
-    case 'ADD_CHARACTER':
-      return [...state, createCharacter(action.id, action.text)];
+    case characterActionTypes.FETCH_CHARACTER_START:
+      return { ...state, loading: true };
+    case characterActionTypes.FETCH_CHARACTER_SUCCESS:
+      return { ...state, characters: action.payload, loading: false };
+    case characterActionTypes.FETCH_CHARACTER_ERROR:
+      return { ...state, loading: false };
     default:
       return state;
   }

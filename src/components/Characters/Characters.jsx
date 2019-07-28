@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import { Wrapper } from './Characters.styles';
 import Character from './Character/Character';
 import type { Characters } from '../../types/character';
@@ -65,13 +65,19 @@ const renderCharacters = (
   return '';
 };
 
-const CharactersComponent = (props: CharactersProps) => {
-  const { characters, clickCharacter } = props;
-  return (
-    <Wrapper>
-      {renderCharacters(characters, simonColors, clickCharacter)}
-    </Wrapper>
-  );
-};
+class CharactersComponent extends Component {
+  componentDidMount() {
+    this.props.fetchCharacters();
+  }
+
+  render() {
+    const { characters, clickCharacter } = this.props;
+    return (
+      <Wrapper>
+        {renderCharacters(characters, simonColors, clickCharacter)}
+      </Wrapper>
+    );
+  }
+}
 
 export default CharactersComponent;

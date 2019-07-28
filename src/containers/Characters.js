@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { clickCharacter } from '../store/actions/game';
+import { fetchCharacters } from '../store/actions/character';
 import CharactersComponent from '../components/Characters/Characters';
 
 const mapStateToProps = state => {
@@ -13,7 +14,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      clickCharacter
+      clickCharacter,
+      fetchCharacters
     },
     dispatch
   );

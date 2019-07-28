@@ -1,21 +1,39 @@
 // @flow
-import { bindActionCreators } from 'redux';
 
-import store from '../configureStore';
-import type { CharacterAction, Character } from '../../types/character';
+import { characterActionTypes } from '../../types/character';
 
-export const characterActionTypes = {
-  ADD_CHARACTER: 'ADD_CHARACTER'
-};
+import { getCharacters } from '../../lib/characterService';
+
+import type {
+  CharacterAction,
+  Character,
+  Characters
+} from '../../types/character';
 
 export const addCharacter = (payload: Character): CharacterAction => ({
   type: characterActionTypes.ADD_CHARACTER,
   payload
 });
 
-export const characterActions = bindActionCreators(
-  {
-    addCharacter
-  },
-  store.dispatch
-);
+export const fetchCharactersSuccess = (
+  payload: Characters
+): CharacterAction => ({
+  type: characterActionTypes.FETCH_CHARACTER_SUCCESS,
+  payload
+});
+
+export const fetchCharactersError = (payload: string): CharacterAction => ({
+  type: characterActionTypes.FETCH_CHARACTER_ERROR,
+  payload
+});
+
+export const fetchCharacters = (): CharacterAction => {
+  return dispatch => {
+    dispatch({ type: characterActionTypes.FETCH_CHARACTER_START });
+    getCharacters([5, 6, 7, 8])
+      .then((fetchedCharacters: Characters) =>
+        dispatch(fetchCharactersSuccess(fetchedCharacters))
+      )
+      .catch(err => dispatch(fetchCharactersError(err.message)));
+  };
+};
