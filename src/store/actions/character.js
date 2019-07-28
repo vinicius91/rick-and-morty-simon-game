@@ -4,16 +4,7 @@ import { characterActionTypes } from '../../types/character';
 
 import { getCharacters } from '../../lib/characterService';
 
-import type {
-  CharacterAction,
-  Character,
-  Characters
-} from '../../types/character';
-
-export const addCharacter = (payload: Character): CharacterAction => ({
-  type: characterActionTypes.ADD_CHARACTER,
-  payload
-});
+import type { CharacterAction, Characters } from '../../types/character';
 
 export const fetchCharactersSuccess = (
   payload: Characters
@@ -27,13 +18,13 @@ export const fetchCharactersError = (payload: string): CharacterAction => ({
   payload
 });
 
-export const fetchCharacters = (): CharacterAction => {
+export function fetchCharacters(): CharacterAction {
   return dispatch => {
     dispatch({ type: characterActionTypes.FETCH_CHARACTER_START });
-    getCharacters([5, 6, 7, 8])
+    return getCharacters([5, 6, 7, 8])
       .then((fetchedCharacters: Characters) =>
         dispatch(fetchCharactersSuccess(fetchedCharacters))
       )
       .catch(err => dispatch(fetchCharactersError(err.message)));
   };
-};
+}

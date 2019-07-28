@@ -1,7 +1,6 @@
 // @flow
 
-import type { GameState } from '../../types/game';
-import type { Action } from '../../types';
+import type { GameState, GameAction } from '../../types/game';
 import { gameActionTypes } from '../../types/game';
 
 const gameInitialState: GameState = {
@@ -16,7 +15,7 @@ const gameInitialState: GameState = {
 
 const game = (
   state: GameState = gameInitialState,
-  action: Action
+  action: GameAction
 ): GameState => {
   switch (action.type) {
     case gameActionTypes.TOGGLE_GAME:
@@ -25,6 +24,8 @@ const game = (
       return { ...state, isStrict: !state.isStrict };
     case gameActionTypes.START_GAME:
       return { ...state, isActive: !state.isActive };
+    case gameActionTypes.ACTIVATE_CHARACTER:
+      return { ...state, activeCharacter: action.payload };
     default:
       return state;
   }
