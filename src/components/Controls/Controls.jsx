@@ -14,6 +14,7 @@ import {
   BtnLabel,
   ActionsWrapper
 } from './Controls.styles';
+import type { Ids } from '../../types/character';
 import type { ControlsProps } from '../../types/controls';
 
 class ControlsComponent extends Component<ControlsProps> {
@@ -39,17 +40,16 @@ class ControlsComponent extends Component<ControlsProps> {
     }
   }
 
+  handleStartClick = (ids: Ids) => {
+    const { isOn, initializeGame } = this.props;
+    if (isOn) {
+      initializeGame(ids);
+    }
+  };
+
   render() {
     const errorSound = 'https://simongame.s3.amazonaws.com/errorSound.mp3';
-    const {
-      score,
-      isActive,
-      isOn,
-      ids,
-      loading,
-      toggleGame,
-      initializeGame
-    } = this.props;
+    const { score, isActive, isOn, ids, loading, toggleGame } = this.props;
     if (!loading) {
       return (
         <Wrapper>
@@ -65,7 +65,11 @@ class ControlsComponent extends Component<ControlsProps> {
           </ScoreWrapper>
           <ActionsWrapper>
             <BtnWrapper>
-              <StartBtn active={isActive} onClick={() => initializeGame(ids)} />
+              <StartBtn
+                active={isActive}
+                enabled={isOn}
+                onClick={() => this.handleStartClick(ids)}
+              />
               <BtnLabel>START</BtnLabel>
             </BtnWrapper>
             <ToggleWrapper>

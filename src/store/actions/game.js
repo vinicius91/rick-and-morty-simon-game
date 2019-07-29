@@ -1,7 +1,11 @@
 // @flow
 
 import { gameActionTypes } from '../../types/game';
-import { generateSequence, iterateSequence } from '../../lib/simonGame';
+import {
+  generateSequence,
+  iterateSequence,
+  cancelSequence
+} from '../../lib/simonGame';
 import type {
   GameAction,
   Sequence,
@@ -11,9 +15,12 @@ import type {
 
 // Action Creators
 
-export const createToggleGameAction = (): GameAction => ({
-  type: gameActionTypes.TOGGLE_GAME
-});
+export const createToggleGameAction = (): GameAction => {
+  cancelSequence();
+  return {
+    type: gameActionTypes.TOGGLE_GAME
+  };
+};
 
 export const createStartGameAction = (): GameAction => {
   return {
@@ -52,6 +59,7 @@ export const playSequence = (sequence: Sequence): GameAction => {
 };
 
 export const initializeGame = (ids: Ids): GameAction => {
+  cancelSequence();
   return dispatch => {
     const sequence: Sequence = generateSequence(0, ids);
     dispatch(createStartGameAction());

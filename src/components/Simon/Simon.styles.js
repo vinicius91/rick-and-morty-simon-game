@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  max-width: 800px;
+  max-width: 500px;
   padding: 15px;
   margin: auto;
   box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.2),
@@ -37,4 +37,15 @@ export const Line = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+`;
+
+export const Title = styled.p`
+  font-family: 'Misfits';
+  color: #3cb0ca;
+  margin: 0px;
+  text-align: center;
+  line-height: 100%;
+  font-size: 3em;
+  text-shadow: 0 0px 10px #aaff01, 0 0 1px, 0 0 12px #aaff01, 0 0 0.25em #aaff01,
+    0 0 1px #aaff01;
 `;

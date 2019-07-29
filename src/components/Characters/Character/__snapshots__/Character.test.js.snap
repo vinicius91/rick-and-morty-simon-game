@@ -2,7 +2,7 @@
 
 exports[`Character Component Should render default Active Character 1`] = `
 <div
-  className="Characterstyles__RegularCharacter-sc-77sfuh-0 Characterstyles__ActiveCharacter-sc-77sfuh-1 hLWHTt"
+  className="Characterstyles__RegularCharacter-sc-77sfuh-0 Characterstyles__ActiveCharacter-sc-77sfuh-1 hfbbat"
   color="#ffffff"
   onClick={[Function]}
 >
@@ -15,7 +15,7 @@ exports[`Character Component Should render default Active Character 1`] = `
 
 exports[`Character Component Should render default Character 1`] = `
 <div
-  className="Characterstyles__RegularCharacter-sc-77sfuh-0 bdvRsH"
+  className="Characterstyles__RegularCharacter-sc-77sfuh-0 bvtMHj"
   color="#ffffff"
   onClick={[Function]}
 >
@@ -27,7 +27,7 @@ exports[`Character Component Should render default Character 1`] = `
 
 exports[`Character Component Should render default Disabled Character 1`] = `
 <div
-  className="Characterstyles__RegularCharacter-sc-77sfuh-0 beBUvM"
+  className="Characterstyles__RegularCharacter-sc-77sfuh-0 cowtzx"
   color="#ffffff"
   onClick={[Function]}
 >

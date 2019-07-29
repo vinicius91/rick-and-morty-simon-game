@@ -15,9 +15,8 @@ const clickMixin = css`
 `;
 
 export const RegularCharacter = styled.div`
-  width: 30vw;
-  min-height: 18vw;
-  flex: 0 1 45%;
+  height: 20vh;
+  flex: 0 1 40%;
   margin: 15px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,30 +31,9 @@ export const RegularCharacter = styled.div`
     height: 35vw;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
-    flex-basis: 42%;
-    margin: 8px;
-    width: 25vw;
-    height: 35vw;
-  }
-
-  @media (min-width: 768px) and (max-width: 1000px) {
-    flex-basis: 42%;
-    margin: 8px;
-    width: 20vw;
-    height: 33vw;
-  }
-
-  @media (min-width: 1001px) and (max-width: 1280px) {
-    flex-basis: 44%;
-    margin: 10px;
-    width: 25vw;
-    height: 25vw;
-  }
-
-  @media (min-width: 1281px) and (max-width: 1550px) {
-    width: 25vw;
-    height: 20vw;
+  @media (min-width: 481px) and (max-width: 1600px) {
+    flex-basis: 40%;
+    height: 20vh;
   }
 
   background-image: ${props => `url(${props.img})`};
@@ -69,8 +47,8 @@ export const RegularCharacter = styled.div`
 export const ActiveCharacter = styled(RegularCharacter)`
   box-shadow: ${props => `0 0 5px #fff, 
     inset 0 0 5px #fff, 
-    0 0 20px ${props.color},
-    inset 0 0 20px ${props.color}`};
+    0 0 25px ${props.color},
+    inset 0 0 25px ${props.color}`};
 
   :hover {
     transform: translate(0px, 0px);

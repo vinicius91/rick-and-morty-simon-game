@@ -1,19 +1,58 @@
 import React from 'react';
 import {
   Wrapper,
-  TopLeft,
-  TopRight,
-  BottomLeft,
-  BottomRight
+  Portal,
+  Swish,
+  Swirl,
+  SwirlSpanOne,
+  SwirlSpanTwo,
+  SwirlSpanThree,
+  SwirlDouble,
+  SwirlTriple,
+  SwirlSpecial,
+  SwishSpanOne,
+  SwishSpanTwo,
+  SwishSpanThree,
+  SwishSpanFour
 } from './Loading.styles';
 
 const Loading = () => {
   return (
     <Wrapper>
-      <TopLeft />
-      <TopRight />
-      <BottomLeft />
-      <BottomRight />
+      <Portal>
+        <Swish>
+          <SwishSpanOne />
+          <SwishSpanTwo />
+          <SwishSpanThree />
+          <SwishSpanFour />
+        </Swish>
+        <Swirl>
+          <SwirlSpanOne />
+          <SwirlSpanTwo />
+          <SwirlSpanThree />
+          <SwirlDouble>
+            <SwirlSpanOne />
+            <SwirlTriple>
+              <SwirlSpanOne />
+              <SwirlTriple>
+                <SwirlSpanOne />
+                <SwirlTriple>
+                  <SwirlSpanOne />
+                  <SwirlSpecial>
+                    <SwirlSpanOne />
+                    <SwirlTriple>
+                      <SwirlSpanOne />
+                      <SwirlSpecial>
+                        <SwirlSpanOne />
+                      </SwirlSpecial>
+                    </SwirlTriple>
+                  </SwirlSpecial>
+                </SwirlTriple>
+              </SwirlTriple>
+            </SwirlTriple>
+          </SwirlDouble>
+        </Swirl>
+      </Portal>
     </Wrapper>
   );
 };

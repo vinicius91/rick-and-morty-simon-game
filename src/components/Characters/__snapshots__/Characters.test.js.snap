@@ -2,10 +2,10 @@
 
 exports[`Characters Component Should render with 4 characters 1`] = `
 <div
-  className="Charactersstyles__Wrapper-sc-1z0bbli-0 fJoBau"
+  className="Charactersstyles__Wrapper-sc-1z0bbli-0 kdlhnX"
 >
   <div
-    className="Characterstyles__RegularCharacter-sc-77sfuh-0 bsoBDY"
+    className="Characterstyles__RegularCharacter-sc-77sfuh-0 jKryPT"
     color="#5fd382"
     onClick={[Function]}
   >
@@ -14,7 +14,7 @@ exports[`Characters Component Should render with 4 characters 1`] = `
     />
   </div>
   <div
-    className="Characterstyles__RegularCharacter-sc-77sfuh-0 cPrqPa"
+    className="Characterstyles__RegularCharacter-sc-77sfuh-0 iwLkVP"
     color="#dc5245"
     onClick={[Function]}
   >
@@ -23,7 +23,7 @@ exports[`Characters Component Should render with 4 characters 1`] = `
     />
   </div>
   <div
-    className="Characterstyles__RegularCharacter-sc-77sfuh-0 iqrNRW"
+    className="Characterstyles__RegularCharacter-sc-77sfuh-0 iqtftX"
     color="#e6e564"
     onClick={[Function]}
   >
@@ -32,7 +32,7 @@ exports[`Characters Component Should render with 4 characters 1`] = `
     />
   </div>
   <div
-    className="Characterstyles__RegularCharacter-sc-77sfuh-0 dNIskn"
+    className="Characterstyles__RegularCharacter-sc-77sfuh-0 dmXYji"
     color="#038fe4"
     onClick={[Function]}
   >
@@ -45,30 +45,100 @@ exports[`Characters Component Should render with 4 characters 1`] = `
 
 exports[`Characters Component Should render with loading 1`] = `
 <div
-  className="Charactersstyles__Wrapper-sc-1z0bbli-0 fJoBau"
+  className="Charactersstyles__Wrapper-sc-1z0bbli-0 kdlhnX"
 >
   <div
-    className="Loadingstyles__Wrapper-sc-1sj5pia-0 hHjlWI"
+    className="Loadingstyles__Wrapper-sc-1sj5pia-0 doNlxm"
   >
     <div
-      className="Loadingstyles__Item-sc-1sj5pia-1 Loadingstyles__TopLeft-sc-1sj5pia-2 iOrcYc"
-    />
-    <div
-      className="Loadingstyles__Item-sc-1sj5pia-1 Loadingstyles__TopRight-sc-1sj5pia-3 WvMuE"
-    />
-    <div
-      className="Loadingstyles__Item-sc-1sj5pia-1 Loadingstyles__BottomLeft-sc-1sj5pia-4 lpmjCt"
-    />
-    <div
-      className="Loadingstyles__Item-sc-1sj5pia-1 Loadingstyles__BottomRight-sc-1sj5pia-5 fjUBIT"
-    />
+      className="Loadingstyles__Portal-sc-1sj5pia-1 gPsram"
+    >
+      <div
+        className="Loadingstyles__Swish-sc-1sj5pia-10 fnDiug"
+      >
+        <span
+          className="Loadingstyles__SwishSpan-sc-1sj5pia-11 Loadingstyles__SwishSpanOne-sc-1sj5pia-12 isPzsW"
+        />
+        <span
+          className="Loadingstyles__SwishSpan-sc-1sj5pia-11 Loadingstyles__SwishSpanTwo-sc-1sj5pia-13 kykqkM"
+        />
+        <span
+          className="Loadingstyles__SwishSpan-sc-1sj5pia-11 Loadingstyles__SwishSpanThree-sc-1sj5pia-14 kBSnuF"
+        />
+        <span
+          className="Loadingstyles__SwishSpan-sc-1sj5pia-11 Loadingstyles__SwishSpanFour-sc-1sj5pia-15 dMZCuu"
+        />
+      </div>
+      <div
+        className="Loadingstyles__Swirl-sc-1sj5pia-2 jkzykY"
+      >
+        <span
+          className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanOne-sc-1sj5pia-7 iBNFKm"
+        />
+        <span
+          className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanTwo-sc-1sj5pia-8 hSHYsR"
+        />
+        <span
+          className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanThree-sc-1sj5pia-9 ligCez"
+        />
+        <div
+          className="Loadingstyles__Swirl-sc-1sj5pia-2 Loadingstyles__SwirlDouble-sc-1sj5pia-3 dqKKzo"
+        >
+          <span
+            className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanOne-sc-1sj5pia-7 iBNFKm"
+          />
+          <div
+            className="Loadingstyles__Swirl-sc-1sj5pia-2 Loadingstyles__SwirlTriple-sc-1sj5pia-4 kPttOI"
+          >
+            <span
+              className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanOne-sc-1sj5pia-7 iBNFKm"
+            />
+            <div
+              className="Loadingstyles__Swirl-sc-1sj5pia-2 Loadingstyles__SwirlTriple-sc-1sj5pia-4 kPttOI"
+            >
+              <span
+                className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanOne-sc-1sj5pia-7 iBNFKm"
+              />
+              <div
+                className="Loadingstyles__Swirl-sc-1sj5pia-2 Loadingstyles__SwirlTriple-sc-1sj5pia-4 kPttOI"
+              >
+                <span
+                  className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanOne-sc-1sj5pia-7 iBNFKm"
+                />
+                <div
+                  className="Loadingstyles__Swirl-sc-1sj5pia-2 Loadingstyles__SwirlSpecial-sc-1sj5pia-5 ifLXZo"
+                >
+                  <span
+                    className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanOne-sc-1sj5pia-7 iBNFKm"
+                  />
+                  <div
+                    className="Loadingstyles__Swirl-sc-1sj5pia-2 Loadingstyles__SwirlTriple-sc-1sj5pia-4 kPttOI"
+                  >
+                    <span
+                      className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanOne-sc-1sj5pia-7 iBNFKm"
+                    />
+                    <div
+                      className="Loadingstyles__Swirl-sc-1sj5pia-2 Loadingstyles__SwirlSpecial-sc-1sj5pia-5 ifLXZo"
+                    >
+                      <span
+                        className="Loadingstyles__SwirlSpan-sc-1sj5pia-6 Loadingstyles__SwirlSpanOne-sc-1sj5pia-7 iBNFKm"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Characters Component Should render without characters 1`] = `
 <div
-  className="Charactersstyles__Wrapper-sc-1z0bbli-0 fJoBau"
+  className="Charactersstyles__Wrapper-sc-1z0bbli-0 kdlhnX"
 >
   
 </div>

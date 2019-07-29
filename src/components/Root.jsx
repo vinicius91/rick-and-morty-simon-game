@@ -1,22 +1,33 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
+import font from '../assets/misfits.ttf';
+import sky from '../assets/sky.jpg';
 
 import Simon from './Simon/Simon';
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Misfits";
+    src: url(${font});
+    font-weight: 600;
+    font-style: normal;
+  }
+  h3 {
+    font-family: "Misfits";
+  }
+
   body {
-    background: #45484d;
-    background: -moz-linear-gradient(-45deg,  #45484d 0%, #000000 100%);
-    background: -webkit-linear-gradient(-45deg,  #45484d 0%,#000000 100%);
-    background: linear-gradient(135deg,  #45484d 0%,#000000 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 );
+    background-image: url(${sky});
+    
   }
 
   #root {
     height: 100vh;
     display: flex;
   }
+
+  
 `;
 
 const Root = ({ store }) => (

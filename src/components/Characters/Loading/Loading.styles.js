@@ -1,5 +1,60 @@
 import styled, { keyframes } from 'styled-components';
 
+export const rotate = keyframes`
+  
+  0% {
+    transform: rotate(90deg);
+    color:#fff;
+  }
+  
+  50% {
+    color:green;
+  }
+  
+  100% {
+    transform: rotate(180deg);
+    color:#fff;
+  } 
+`;
+export const rotate2 = keyframes`
+  
+  0% {
+    transform: rotate(0deg);
+    color:#fff;
+  }
+  
+  100% {
+    transform: rotate(360deg);
+    color:#fff;
+  }
+  
+`;
+
+export const wobble = keyframes`
+  
+  0% {
+    width: 202px;
+    height: 198px;
+    margin: -98px 0 0 -102px;
+    box-shadow: 0 0 10px lime;
+  }
+  
+  50% {
+    width: 198px;
+    height: 202px;
+    margin: -102px 0 0 -98px;
+    box-shadow: 0 0 15px lime;
+  }
+  
+  100% {
+    width: 202px;
+    height: 198px;
+    margin: -98px 0 0 -102px;
+    box-shadow: 0 0 10px lime;
+  }
+  
+`;
+
 export const tl = keyframes`
     0%,96%,100%{transform:rotate(0deg)}
     12%{transform:rotate(-45deg)}
@@ -42,103 +97,160 @@ export const br = keyframes`
 `;
 
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 300px;
+`;
+
+export const Portal = styled.div`
   display: block;
   position: relative;
-  width: 200px;
-  height: 200px;
+  left: 9%;
+  top: 15%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  margin: 50%;
+  border: 1px solid lime;
+  box-shadow: inset 0 0 60px yellow;
+  overflow: visible;
+  background-color: lime;
+  animation: ${wobble} 1s infinite linear;
+
+  @media (max-width: 480px) {
+    left: 15%;
+  }
 `;
 
-export const Item = styled.div`
+export const Swirl = styled.div`
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  width: 80%;
+  height: 80%;
+  z-index: 4;
+  border-radius: 50%;
+  margin: 0% 0 0 0%;
+  border: 0;
+  box-shadow: inset -20px -22px 3px lime;
+  animation: ${rotate} 15s infinite linear;
+  background-color: #0a0;
+  padding: 2px;
+  content: '.';
+  color: #fff;
+  font-size: 20px;
+
+  :after {
+    position: absolute;
+    content: '.   .';
+    font-size: 2.5em;
+    display: inline-block;
+    margin-top: -40px;
+    color: green;
+  }
+
+  :before {
+    content: '.  .';
+    font-size: 2em;
+    display: inline-block;
+    margin-top: -40px;
+    color: white;
+  }
+`;
+
+export const SwirlDouble = styled(Swirl)`
+  animation-delay: 0.83s;
+  box-shadow: inset -110px -110px 0 lime;
+  border-color: green;
+`;
+
+export const SwirlTriple = styled(Swirl)`
+  animation-delay: 0.33s;
+  box-shadow: inset -110px -110px 0 lime;
+`;
+
+export const SwirlSpecial = styled(Swirl)`
+  animation-delay: 0.33s;
+  box-shadow: inset -20px -20px 0 lime;
+`;
+
+export const SwirlSpan = styled.span`
+  background-color: #0a0;
+  border-radius: 50%;
   display: block;
   position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 50px;
-  left: 50px;
-  :before,
-  :after {
-    display: block;
-    position: absolute;
-    content: '';
-  }
-
-  :before {
-    width: 50px;
-    height: 50px;
-  }
-
-  :after {
-    background-color: rgba(0, 0, 0, 0)
-    width: 25px;
-    height: 25px;
-    z-index: 1;
-  }
+  z-index: 20;
+  transform: rotate(45deg);
 `;
 
-export const TopLeft = styled(Item)`
-  animation: ${tl} 3.5s ease infinite;
-
-  :before {
-    background: #fbbc05;
-    top: 0;
-    left: 0;
-    border-radius: 100% 0 0 0;
-  }
-
-  :after {
-    top: 25px;
-    left: 25px;
-    border-radius: 100% 0 0 0;
-  }
+export const SwirlSpanOne = styled(SwirlSpan)`
+  top: 70%;
+  left: 40%;
+  width: 45%;
+  height: 15%;
+  animation: ${rotate} 5s infinite linear;
 `;
 
-export const TopRight = styled(Item)`
-  animation: ${tr} 3.5s ease infinite;
-
-  :before {
-    background: #ea4335;
-    top: 0;
-    right: 0;
-    border-radius: 0 100% 0 0;
-  }
-
-  :after {
-    top: 25px;
-    right: 25px;
-    border-radius: 0 100% 0 0;
-  }
+export const SwirlSpanTwo = styled(SwirlSpan)`
+  top: 30%;
+  left: 50%;
+  width: 5%;
+  height: 10%;
+  animation: ${rotate2} 5s infinite linear;
 `;
 
-export const BottomLeft = styled(Item)`
-  animation: ${bl} 3.5s ease infinite;
-
-  :before {
-    background: #34a853;
-    bottom: 0;
-    left: 0;
-    border-radius: 0 0 0 100%;
-  }
-
-  :after {
-    bottom: 25px;
-    left: 25px;
-    border-radius: 0 0 0 100%;
-  }
+export const SwirlSpanThree = styled(SwirlSpan)`
+  top: 40%;
+  left: 75%;
+  width: 15%;
+  height: 10%;
+  animation: ${rotate} 5s infinite linear;
 `;
 
-export const BottomRight = styled(Item)`
-  animation: ${br} 3.5s ease infinite;
+export const Swish = styled.div`
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #fff;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 100px lime, 0 0 2px lime;
+  z-index: 10;
+  animation: ${rotate2} 15s infinite linear;
+`;
 
-  :before {
-    background: #4285f4;
-    bottom: 0;
-    right: 0;
-    border-radius: 0 0 100% 0;
-  }
+export const SwishSpan = styled.span`
+  position: absolute;
+  display: block;
+  width: 4%;
+  height: 4%;
+  background: #fff;
+  border-radius: 50%;
+`;
 
-  :after {
-    bottom: 25px;
-    right: 25px;
-    border-radius: 0 0 100% 0;
-  }
+export const SwishSpanOne = styled(SwishSpan)`
+  top: 10%;
+  left: 50%;
+`;
+
+export const SwishSpanTwo = styled(SwishSpan)`
+  top: 90%;
+  left: 30%;
+`;
+
+export const SwishSpanThree = styled(SwishSpan)`
+  top: 20%;
+  left: 20%;
+`;
+
+export const SwishSpanFour = styled(SwishSpan)`
+  top: 40%;
+  left: 22%;
+  width: 8x;
+  height: 8x;
 `;

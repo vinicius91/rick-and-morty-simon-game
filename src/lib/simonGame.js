@@ -6,7 +6,7 @@ let timeoutRef = [];
 
 export const getRandomNumberFromArray = (ids: Ids): number => {
   const min = 0;
-  const max = ids.length - 1;
+  const max = ids.length;
   const index = Math.floor(Math.random() * (+max - +min)) + +min;
   return ids[index];
 };
@@ -43,6 +43,11 @@ export const iterateSequence = (
   });
 };
 
+export const cancelSequence = () => {
+  timeoutRef.forEach(timeoutId => clearTimeout(timeoutId));
+  timeoutRef = [];
+};
+
 export const isCorrectClick = (
   sequence: Sequence,
   currentIndex: number,
@@ -51,8 +56,6 @@ export const isCorrectClick = (
   if (sequence[currentIndex] === id) {
     return true;
   }
-  timeoutRef.forEach(timeoutId => clearTimeout(timeoutId));
-  timeoutRef = [];
-  clearTimeout();
+  cancelSequence();
   return false;
 };

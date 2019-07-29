@@ -5,5 +5,5 @@ export const Wrapper = styled.div`
   flex-grow: 1;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
 `;

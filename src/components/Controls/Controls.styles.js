@@ -28,7 +28,6 @@ const wrapperBackground = css`
 
 export const Wrapper = styled.div`
   ${wrapperBackground}
-  flex-grow: 1;
   margin: 10px;
   min-height: 60px;
   border-radius: 10px;
@@ -65,7 +64,7 @@ export const Score = styled.h1`
 `;
 
 export const Label = styled.h3`
-  @media (max-width: 340px) {
+  @media (max-width: 400px) {
     font-size: 0.7em;
   }
   display: inline-block;
@@ -133,6 +132,16 @@ export const BtnWrapper = styled.div`
   display: inline-block;
 `;
 
+const activeButtonMixin = css`
+  cursor: pointer;
+
+  :active {
+    width: 19px;
+    height: 19px;
+    margin-bottom: 1px;
+  }
+`;
+
 export const ActionBtn = styled.div`
   width: 20px;
   height: 20px;
@@ -142,13 +151,8 @@ export const ActionBtn = styled.div`
   box-shadow: 0px 2px 3px #222;
   margin: auto;
   top: -5px;
-  cursor: pointer;
 
-  :active {
-    width: 19px;
-    height: 19px;
-    margin-bottom: 1px;
-  }
+  ${props => (props.enabled ? activeButtonMixin : '')}
 `;
 
 export const BtnLabel = styled(Label)`

@@ -4,7 +4,7 @@ exports[`Controls Component Should render blank with loading 1`] = `<div />`;
 
 exports[`Controls Component Should render toggle on 1`] = `
 <div
-  className="Controlsstyles__Wrapper-sc-1qy04f2-0 hvVbvp"
+  className="Controlsstyles__Wrapper-sc-1qy04f2-0 OMHJy"
 >
   <audio
     src="https://simongame.s3.amazonaws.com/errorSound.mp3"
@@ -18,7 +18,7 @@ exports[`Controls Component Should render toggle on 1`] = `
       --
     </h1>
     <h3
-      className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
     >
       COUNT
     </h3>
@@ -34,7 +34,7 @@ exports[`Controls Component Should render toggle on 1`] = `
         onClick={[Function]}
       />
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 iqMRns"
+        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 ifkaXX"
       >
         START
       </h3>
@@ -43,7 +43,7 @@ exports[`Controls Component Should render toggle on 1`] = `
       className="Controlsstyles__ToggleWrapper-sc-1qy04f2-5 jSBQeW"
     >
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+        className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
       >
         OFF
       </h3>
@@ -56,7 +56,7 @@ exports[`Controls Component Should render toggle on 1`] = `
         />
       </div>
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+        className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
       >
         ON
       </h3>
@@ -67,7 +67,7 @@ exports[`Controls Component Should render toggle on 1`] = `
 
 exports[`Controls Component Should render with default 1`] = `
 <div
-  className="Controlsstyles__Wrapper-sc-1qy04f2-0 hvVbvp"
+  className="Controlsstyles__Wrapper-sc-1qy04f2-0 OMHJy"
 >
   <audio
     src="https://simongame.s3.amazonaws.com/errorSound.mp3"
@@ -81,7 +81,7 @@ exports[`Controls Component Should render with default 1`] = `
       --
     </h1>
     <h3
-      className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
     >
       COUNT
     </h3>
@@ -93,11 +93,11 @@ exports[`Controls Component Should render with default 1`] = `
       className="Controlsstyles__BtnWrapper-sc-1qy04f2-8 hIyuSu"
     >
       <div
-        className="Controlsstyles__ActionBtn-sc-1qy04f2-9 Controlsstyles__StartBtn-sc-1qy04f2-11 juknOM"
+        className="Controlsstyles__ActionBtn-sc-1qy04f2-9 Controlsstyles__StartBtn-sc-1qy04f2-11 loHetH"
         onClick={[Function]}
       />
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 iqMRns"
+        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 ifkaXX"
       >
         START
       </h3>
@@ -106,7 +106,7 @@ exports[`Controls Component Should render with default 1`] = `
       className="Controlsstyles__ToggleWrapper-sc-1qy04f2-5 jSBQeW"
     >
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+        className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
       >
         OFF
       </h3>
@@ -119,7 +119,7 @@ exports[`Controls Component Should render with default 1`] = `
         />
       </div>
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+        className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
       >
         ON
       </h3>
@@ -130,7 +130,7 @@ exports[`Controls Component Should render with default 1`] = `
 
 exports[`Controls Component Should render without game active 1`] = `
 <div
-  className="Controlsstyles__Wrapper-sc-1qy04f2-0 hvVbvp"
+  className="Controlsstyles__Wrapper-sc-1qy04f2-0 OMHJy"
 >
   <audio
     src="https://simongame.s3.amazonaws.com/errorSound.mp3"
@@ -144,7 +144,7 @@ exports[`Controls Component Should render without game active 1`] = `
       --
     </h1>
     <h3
-      className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
     >
       COUNT
     </h3>
@@ -160,7 +160,7 @@ exports[`Controls Component Should render without game active 1`] = `
         onClick={[Function]}
       />
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 iqMRns"
+        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 ifkaXX"
       >
         START
       </h3>
@@ -169,7 +169,7 @@ exports[`Controls Component Should render without game active 1`] = `
       className="Controlsstyles__ToggleWrapper-sc-1qy04f2-5 jSBQeW"
     >
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+        className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
       >
         OFF
       </h3>
@@ -182,7 +182,7 @@ exports[`Controls Component Should render without game active 1`] = `
         />
       </div>
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+        className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
       >
         ON
       </h3>
@@ -193,7 +193,7 @@ exports[`Controls Component Should render without game active 1`] = `
 
 exports[`Controls Component Should render without game active and score 1`] = `
 <div
-  className="Controlsstyles__Wrapper-sc-1qy04f2-0 hvVbvp"
+  className="Controlsstyles__Wrapper-sc-1qy04f2-0 OMHJy"
 >
   <audio
     src="https://simongame.s3.amazonaws.com/errorSound.mp3"
@@ -207,7 +207,7 @@ exports[`Controls Component Should render without game active and score 1`] = `
       10
     </h1>
     <h3
-      className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
     >
       COUNT
     </h3>
@@ -223,7 +223,7 @@ exports[`Controls Component Should render without game active and score 1`] = `
         onClick={[Function]}
       />
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 iqMRns"
+        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 ifkaXX"
       >
         START
       </h3>
@@ -232,7 +232,7 @@ exports[`Controls Component Should render without game active and score 1`] = `
       className="Controlsstyles__ToggleWrapper-sc-1qy04f2-5 jSBQeW"
     >
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+        className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
       >
         OFF
       </h3>
@@ -245,7 +245,7 @@ exports[`Controls Component Should render without game active and score 1`] = `
         />
       </div>
       <h3
-        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+        className="Controlsstyles__Label-sc-1qy04f2-3 kzTHqe"
       >
         ON
       </h3>
