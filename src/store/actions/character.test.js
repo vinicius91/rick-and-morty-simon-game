@@ -1,8 +1,12 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
-import { fetchCharacters } from './character';
-import { characterActionTypes } from '../../types/character';
+import {
+  fetchCharacters,
+  createFetchCharactersStartAction,
+  createFetchCharactersSuccessAction,
+  createFetchCharactersErrorAction
+} from './character';
 import { characterApiData, charactersArray, storeMock } from '../store.fixture';
 
 const middlewares = [thunk];
@@ -28,11 +32,27 @@ describe('Character Actions', () => {
     expect(store.getActions()).toEqual([]);
 
     const expectedAction = [
-      { type: characterActionTypes.FETCH_CHARACTER_START },
-      {
-        type: characterActionTypes.FETCH_CHARACTER_SUCCESS,
-        payload: charactersArray
-      }
+      createFetchCharactersStartAction(),
+      createFetchCharactersSuccessAction(charactersArray)
+    ];
+
+    return store.dispatch(fetchCharacters()).then(() => {
+      expect(store.getActions()).toEqual(expectedAction);
+    });
+  });
+
+  it('Should handle error while fetching', () => {
+    store.clearActions();
+    expect(store.getActions()).toEqual([]);
+    const error = new Error('Custom error');
+    const resp = { ...error, code: 500 };
+    axios.get.mockResolvedValue(resp);
+
+    const expectedAction = [
+      createFetchCharactersStartAction(),
+      createFetchCharactersErrorAction(
+        "Cannot read property 'map' of undefined"
+      )
     ];
 
     return store.dispatch(fetchCharacters()).then(() => {

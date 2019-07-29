@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import {
-  toggleGame,
-  toggleGameMode,
+  createToggleGameAction,
   initializeGame,
   nextStageGame
 } from '../store/actions/game';
@@ -15,7 +14,6 @@ import type { State } from '../types/index';
 const mapStateToProps = (state: State) => {
   const {
     score,
-    isStrict,
     isActive,
     isOn,
     ids,
@@ -27,7 +25,6 @@ const mapStateToProps = (state: State) => {
 
   return {
     score,
-    isStrict,
     isActive,
     isOn,
     ids,
@@ -42,8 +39,7 @@ const mapStateToProps = (state: State) => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      toggleGame,
-      toggleGameMode,
+      toggleGame: createToggleGameAction,
       initializeGame,
       nextStageGame
     },

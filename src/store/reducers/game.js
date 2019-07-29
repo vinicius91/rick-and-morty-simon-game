@@ -45,7 +45,6 @@ const parseClickCharacterAction = (
 
 const gameInitialState: GameState = {
   score: 0,
-  isStrict: false,
   isActive: false,
   isOn: false,
   isError: false,
@@ -77,11 +76,8 @@ const gameReducer = (
         ...state,
         ...resetState,
         isOn: !state.isOn,
-        isStrict: false,
         isActive: false
       };
-    case gameActionTypes.TOGGLE_GAME_MODE:
-      return { ...state, ...resetState, isStrict: !state.isStrict };
     case gameActionTypes.START_GAME: {
       return { ...state, ...resetState, isActive: !state.isActive };
     }

@@ -3,6 +3,29 @@ import renderer from 'react-test-renderer';
 import Characters from './Characters';
 
 describe('Characters Component', () => {
+  const gameProps = [
+    {
+      base: '#5fd382',
+      dark: '#4ca868',
+      sound: 'https://simongame.s3.amazonaws.com/simonSound1.mp3'
+    },
+    {
+      base: '#dc5245',
+      dark: '#b04137',
+      sound: 'https://simongame.s3.amazonaws.com/simonSound2.mp3'
+    },
+    {
+      base: '#e6e564',
+      dark: '#cfce5a',
+      sound: 'https://simongame.s3.amazonaws.com/simonSound3.mp3'
+    },
+    {
+      base: '#038fe4',
+      dark: '#0272b6',
+      sound: 'https://simongame.s3.amazonaws.com/simonSound4.mp3'
+    }
+  ];
+
   const charactersArray = [
     {
       id: 1,
@@ -27,6 +50,7 @@ describe('Characters Component', () => {
     loading: false,
     isUserStep: false,
     activeCharacter: 0,
+    gameProps,
     clickCharacter: () => {},
     fetchCharacters: () => {}
   };

@@ -14,24 +14,9 @@ import {
   BtnLabel,
   ActionsWrapper
 } from './Controls.styles';
-import type { Ids, Sequence } from '../../types/game';
+import type { ControlsProps } from '../../types/controls';
 
-type Props = {
-  score: number,
-  isActive: boolean,
-  isOn: boolean,
-  loading: boolean,
-  isMachineStep: boolean,
-  isUserStep: boolean,
-  ids: Ids,
-  isError: Boolean,
-  sequence: Sequence,
-  toggleGame: () => void,
-  initializeGame: (ids: Ids) => void,
-  nextStageGame: (score: number, ids: Ids, oldSequence: Sequence) => void
-};
-
-class ControlsComponent extends Component<Props> {
+class ControlsComponent extends Component<ControlsProps> {
   audioRef: ?HTMLAudioElement;
 
   componentDidUpdate() {

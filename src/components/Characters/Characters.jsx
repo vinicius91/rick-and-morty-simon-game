@@ -3,56 +3,19 @@
 import React, { Component } from 'react';
 import { Wrapper } from './Characters.styles';
 import Character from './Character/Character';
-import type { Characters } from '../../types/character';
+import type {
+  Characters,
+  CharactersProps,
+  ClickCharacterHandler
+} from '../../types/character';
+import type { SimonProps } from '../../types/simon';
 
 import Loading from './Loading/Loading';
-
-type ClickHandlerFunction = (id: number) => void;
-type fetchCharactersFunction = () => void;
-type simonProp = {
-  base: string,
-  dark: string,
-  sound: any
-};
-
-type SimonProps = Array<simonProp>;
-
-type CharactersProps = {
-  characters: Characters,
-  loading: boolean,
-  isUserStep: boolean,
-  activeCharacter: number,
-  clickCharacter: ClickHandlerFunction,
-  fetchCharacters: fetchCharactersFunction
-};
-
-const gameProps: SimonProps = [
-  {
-    base: '#5fd382',
-    dark: '#4ca868',
-    sound: 'https://simongame.s3.amazonaws.com/simonSound1.mp3'
-  },
-  {
-    base: '#dc5245',
-    dark: '#b04137',
-    sound: 'https://simongame.s3.amazonaws.com/simonSound2.mp3'
-  },
-  {
-    base: '#e6e564',
-    dark: '#cfce5a',
-    sound: 'https://simongame.s3.amazonaws.com/simonSound3.mp3'
-  },
-  {
-    base: '#038fe4',
-    dark: '#0272b6',
-    sound: 'https://simongame.s3.amazonaws.com/simonSound4.mp3'
-  }
-];
 
 const renderCharacters = (
   characters: Characters,
   simonProps: SimonProps,
-  handler: ClickHandlerFunction,
+  handler: ClickCharacterHandler,
   activeCharacter: number,
   enabled: boolean
 ) => {
@@ -91,7 +54,8 @@ class CharactersComponent extends Component<CharactersProps> {
       clickCharacter,
       activeCharacter,
       loading,
-      isUserStep
+      isUserStep,
+      gameProps
     } = this.props;
     return (
       <Wrapper>

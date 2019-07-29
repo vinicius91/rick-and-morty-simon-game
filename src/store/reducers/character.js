@@ -5,28 +5,11 @@ import { characterActionTypes } from '../../types/character';
 import type { CharacterState, CharacterAction } from '../../types/character';
 
 const charactersInitialState: CharacterState = {
-  characters: [
-    {
-      id: 1,
-      imageUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
-    },
-    {
-      id: 2,
-      imageUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg'
-    },
-    {
-      id: 3,
-      imageUrl: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
-    },
-    {
-      id: 4,
-      imageUrl: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg'
-    }
-  ],
+  characters: [],
   loading: false
 };
 
-const character = (
+const characterReducer = (
   state: CharacterState = charactersInitialState,
   action: CharacterAction
 ): CharacterState => {
@@ -42,4 +25,4 @@ const character = (
   }
 };
 
-export default character;
+export default characterReducer;

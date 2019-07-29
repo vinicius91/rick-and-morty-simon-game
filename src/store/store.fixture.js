@@ -43,7 +43,6 @@ export const charactersArray = [
 export const storeMock = {
   game: {
     score: 0,
-    isStrict: false,
     isActive: false,
     isOn: false,
     isError: false,

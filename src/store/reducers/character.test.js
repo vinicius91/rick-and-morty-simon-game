@@ -35,4 +35,15 @@ describe('Character Reducer', () => {
     expect(fetchStartSuccess.characters).toEqual([]);
     expect(fetchStartSuccess.loading).toEqual(false);
   });
+
+  it('Should return same state with empty action', () => {
+    const initialState = characterReducer(storeMock.characters, {});
+    expect(initialState).toEqual(storeMock.characters);
+  });
+
+  it('Should return default state if no state is passed', () => {
+    const defaultState = characterReducer(undefined, {});
+    expect(defaultState.characters).toEqual([]);
+    expect(defaultState.loading).toEqual(false);
+  });
 });

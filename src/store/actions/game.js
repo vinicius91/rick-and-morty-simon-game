@@ -9,39 +9,27 @@ import type {
   SetGameStepPayload
 } from '../../types/game';
 
-export const toggleGame = (): GameAction => ({
+// Action Creators
+
+export const createToggleGameAction = (): GameAction => ({
   type: gameActionTypes.TOGGLE_GAME
 });
 
-export const toggleGameMode = (): GameAction => ({
-  type: gameActionTypes.TOGGLE_GAME_MODE
-});
-
-export const startGame = (sequence: Sequence, ids: Ids): GameAction => {
+export const createStartGameAction = (): GameAction => {
   return {
-    type: gameActionTypes.START_GAME,
-    payload: {
-      sequence,
-      ids
-    }
+    type: gameActionTypes.START_GAME
   };
 };
 
-export const activateCharacter = (payload: number): GameAction => ({
+export const createActivateCharacterAction = (payload: number): GameAction => ({
   type: gameActionTypes.ACTIVATE_CHARACTER,
   payload
 });
 
-export const playSequence = (sequence: Sequence): GameAction => {
-  return dispatch => {
-    dispatch({
-      type: gameActionTypes.PLAY_SEQUENCE
-    });
-    iterateSequence(sequence, (id: number) => {
-      dispatch(activateCharacter(id));
-    });
-  };
-};
+export const createClickCharacterAction = (payload: number): GameAction => ({
+  type: gameActionTypes.CLICK_CHARACTER,
+  payload
+});
 
 export const createSetGameStepAction = (
   payload: SetGameStepPayload
@@ -50,10 +38,23 @@ export const createSetGameStepAction = (
   payload
 });
 
+// Async Actions
+
+export const playSequence = (sequence: Sequence): GameAction => {
+  return dispatch => {
+    dispatch({
+      type: gameActionTypes.PLAY_SEQUENCE
+    });
+    iterateSequence(sequence, (id: number) => {
+      dispatch(createActivateCharacterAction(id));
+    });
+  };
+};
+
 export const initializeGame = (ids: Ids): GameAction => {
   return dispatch => {
     const sequence: Sequence = generateSequence(0, ids);
-    dispatch(startGame());
+    dispatch(createStartGameAction());
     dispatch(createSetGameStepAction({ sequence, ids }));
     return dispatch(playSequence(sequence));
   };
@@ -70,24 +71,3 @@ export const nextStageGame = (
     return dispatch(playSequence(sequence));
   };
 };
-
-export const startUserStage = (): GameAction => ({
-  type: gameActionTypes.START_USER_STAGE
-});
-
-export const clickCharacter = (payload: number): GameAction => ({
-  type: gameActionTypes.CLICK_CHARACTER,
-  payload
-});
-
-export const winSequence = (): GameAction => ({
-  type: gameActionTypes.WIN_SEQUENCE
-});
-
-export const loseSequence = (): GameAction => ({
-  type: gameActionTypes.LOSE_SEQUENCE
-});
-
-export const resetGame = (): GameAction => ({
-  type: gameActionTypes.RESET_GAME
-});
