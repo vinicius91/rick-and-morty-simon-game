@@ -1,6 +1,6 @@
 // @flow
 
-import * as React from 'react';
+import React, { Component } from 'react';
 import {
   ScoreWrapper,
   Score,
@@ -11,55 +11,91 @@ import {
   Switch,
   BtnWrapper,
   StartBtn,
-  StrictBtn,
   BtnLabel,
   ActionsWrapper
 } from './Controls.styles';
+import type { Ids, Sequence } from '../../types/game';
 
 type Props = {
   score: number,
-  isStrict: boolean,
   isActive: boolean,
   isOn: boolean,
+  loading: boolean,
+  isMachineStep: boolean,
+  isUserStep: boolean,
+  ids: Ids,
+  isError: Boolean,
+  sequence: Sequence,
   toggleGame: () => void,
-  toggleGameMode: () => void,
-  startGame: () => void
-};
-const Controls = (props: Props) => {
-  const {
-    score,
-    isStrict,
-    isActive,
-    isOn,
-    toggleGame,
-    toggleGameMode,
-    startGame
-  } = props;
-  return (
-    <Wrapper>
-      <ScoreWrapper>
-        <Score active={isOn}>{score ? score.toFixed(0) : '--'}</Score>
-        <Label>COUNT</Label>
-      </ScoreWrapper>
-      <ActionsWrapper>
-        <BtnWrapper>
-          <StartBtn active={isActive} onClick={startGame} />
-          <BtnLabel>START</BtnLabel>
-        </BtnWrapper>
-        <BtnWrapper>
-          <StrictBtn active={isStrict} onClick={toggleGameMode} />
-          <BtnLabel>STRICT</BtnLabel>
-        </BtnWrapper>
-        <ToggleWrapper>
-          <Label>OFF</Label>
-          <SwitchWrapper onClick={toggleGame}>
-            <Switch active={isOn} />
-          </SwitchWrapper>
-          <Label>ON</Label>
-        </ToggleWrapper>
-      </ActionsWrapper>
-    </Wrapper>
-  );
+  initializeGame: (ids: Ids) => void,
+  nextStageGame: (score: number, ids: Ids, oldSequence: Sequence) => void
 };
 
-export default Controls;
+class ControlsComponent extends Component<Props> {
+  audioRef: ?HTMLAudioElement;
+
+  componentDidUpdate() {
+    const {
+      isMachineStep,
+      isUserStep,
+      score,
+      ids,
+      sequence,
+      nextStageGame,
+      isError
+    } = this.props;
+    if (isMachineStep && !isUserStep) {
+      nextStageGame(score, ids, sequence);
+    }
+    if (isError) {
+      if (this.audioRef && this.audioRef.play) {
+        this.audioRef.play();
+      }
+    }
+  }
+
+  render() {
+    const errorSound = 'https://simongame.s3.amazonaws.com/errorSound.mp3';
+    const {
+      score,
+      isActive,
+      isOn,
+      ids,
+      loading,
+      toggleGame,
+      initializeGame
+    } = this.props;
+    if (!loading) {
+      return (
+        <Wrapper>
+          <audio
+            ref={(audio: ?HTMLAudioElement) => {
+              this.audioRef = audio;
+            }}
+            src={errorSound}
+          />
+          <ScoreWrapper>
+            <Score active={isOn}>{score ? score.toFixed(0) : '--'}</Score>
+            <Label>COUNT</Label>
+          </ScoreWrapper>
+          <ActionsWrapper>
+            <BtnWrapper>
+              <StartBtn active={isActive} onClick={() => initializeGame(ids)} />
+              <BtnLabel>START</BtnLabel>
+            </BtnWrapper>
+            <ToggleWrapper>
+              <Label>OFF</Label>
+              <SwitchWrapper onClick={toggleGame}>
+                <Switch active={isOn} />
+              </SwitchWrapper>
+              <Label>ON</Label>
+            </ToggleWrapper>
+          </ActionsWrapper>
+        </Wrapper>
+      );
+    }
+    return <div />;
+  }
+}
+
+export default ControlsComponent;

@@ -1,16 +1,41 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { toggleGame, toggleGameMode, startGame } from '../store/actions/game';
-import Controls from '../components/Controls/Controls';
+import {
+  toggleGame,
+  toggleGameMode,
+  initializeGame,
+  nextStageGame
+} from '../store/actions/game';
 
-const mapStateToProps = state => {
-  const { score, isStrict, isActive, isOn } = state.game;
+import ControlsComponent from '../components/Controls/Controls';
+
+import type { State } from '../types/index';
+
+const mapStateToProps = (state: State) => {
+  const {
+    score,
+    isStrict,
+    isActive,
+    isOn,
+    ids,
+    isError,
+    sequence,
+    isMachineStep,
+    isUserStep
+  } = state.game;
+
   return {
     score,
     isStrict,
     isActive,
-    isOn
+    isOn,
+    ids,
+    isError,
+    sequence,
+    isMachineStep,
+    isUserStep,
+    loading: state.characters.loading
   };
 };
 
@@ -19,7 +44,8 @@ const mapDispatchToProps = dispatch =>
     {
       toggleGame,
       toggleGameMode,
-      startGame
+      initializeGame,
+      nextStageGame
     },
     dispatch
   );
@@ -27,6 +53,6 @@ const mapDispatchToProps = dispatch =>
 const ControlsContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Controls);
+)(ControlsComponent);
 
 export default ControlsContainer;

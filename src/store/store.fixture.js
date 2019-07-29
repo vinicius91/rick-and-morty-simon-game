@@ -46,9 +46,13 @@ export const storeMock = {
     isStrict: false,
     isActive: false,
     isOn: false,
+    isError: false,
+    isUserStep: false,
+    isMachineStep: false,
     currentIndex: 0,
     activeCharacter: 0,
-    sequence: []
+    sequence: [],
+    ids: []
   },
   characters: { characters: [], loading: false }
 };

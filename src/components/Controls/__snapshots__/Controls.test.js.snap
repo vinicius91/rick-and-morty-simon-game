@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls Component Should render blank with loading 1`] = `<div />`;
+
+exports[`Controls Component Should render toggle on 1`] = `
+<div
+  className="Controlsstyles__Wrapper-sc-1qy04f2-0 hvVbvp"
+>
+  <audio
+    src="https://simongame.s3.amazonaws.com/errorSound.mp3"
+  />
+  <div
+    className="Controlsstyles__ScoreWrapper-sc-1qy04f2-1 cPQxNE"
+  >
+    <h1
+      className="Controlsstyles__Score-sc-1qy04f2-2 bLancD"
+    >
+      --
+    </h1>
+    <h3
+      className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+    >
+      COUNT
+    </h3>
+  </div>
+  <div
+    className="Controlsstyles__ActionsWrapper-sc-1qy04f2-4 cUmXVB"
+  >
+    <div
+      className="Controlsstyles__BtnWrapper-sc-1qy04f2-8 hIyuSu"
+    >
+      <div
+        className="Controlsstyles__ActionBtn-sc-1qy04f2-9 Controlsstyles__StartBtn-sc-1qy04f2-11 juknOM"
+        onClick={[Function]}
+      />
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 iqMRns"
+      >
+        START
+      </h3>
+    </div>
+    <div
+      className="Controlsstyles__ToggleWrapper-sc-1qy04f2-5 jSBQeW"
+    >
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      >
+        OFF
+      </h3>
+      <div
+        className="Controlsstyles__SwitchWrapper-sc-1qy04f2-6 iJhJgk"
+        onClick={[Function]}
+      >
+        <div
+          className="Controlsstyles__Switch-sc-1qy04f2-7 bqrkBc"
+        />
+      </div>
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      >
+        ON
+      </h3>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls Component Should render with default 1`] = `
+<div
+  className="Controlsstyles__Wrapper-sc-1qy04f2-0 hvVbvp"
+>
+  <audio
+    src="https://simongame.s3.amazonaws.com/errorSound.mp3"
+  />
+  <div
+    className="Controlsstyles__ScoreWrapper-sc-1qy04f2-1 cPQxNE"
+  >
+    <h1
+      className="Controlsstyles__Score-sc-1qy04f2-2 hTCxUG"
+    >
+      --
+    </h1>
+    <h3
+      className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+    >
+      COUNT
+    </h3>
+  </div>
+  <div
+    className="Controlsstyles__ActionsWrapper-sc-1qy04f2-4 cUmXVB"
+  >
+    <div
+      className="Controlsstyles__BtnWrapper-sc-1qy04f2-8 hIyuSu"
+    >
+      <div
+        className="Controlsstyles__ActionBtn-sc-1qy04f2-9 Controlsstyles__StartBtn-sc-1qy04f2-11 juknOM"
+        onClick={[Function]}
+      />
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 iqMRns"
+      >
+        START
+      </h3>
+    </div>
+    <div
+      className="Controlsstyles__ToggleWrapper-sc-1qy04f2-5 jSBQeW"
+    >
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      >
+        OFF
+      </h3>
+      <div
+        className="Controlsstyles__SwitchWrapper-sc-1qy04f2-6 iJhJgk"
+        onClick={[Function]}
+      >
+        <div
+          className="Controlsstyles__Switch-sc-1qy04f2-7 jPJxzl"
+        />
+      </div>
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      >
+        ON
+      </h3>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls Component Should render without game active 1`] = `
+<div
+  className="Controlsstyles__Wrapper-sc-1qy04f2-0 hvVbvp"
+>
+  <audio
+    src="https://simongame.s3.amazonaws.com/errorSound.mp3"
+  />
+  <div
+    className="Controlsstyles__ScoreWrapper-sc-1qy04f2-1 cPQxNE"
+  >
+    <h1
+      className="Controlsstyles__Score-sc-1qy04f2-2 bLancD"
+    >
+      --
+    </h1>
+    <h3
+      className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+    >
+      COUNT
+    </h3>
+  </div>
+  <div
+    className="Controlsstyles__ActionsWrapper-sc-1qy04f2-4 cUmXVB"
+  >
+    <div
+      className="Controlsstyles__BtnWrapper-sc-1qy04f2-8 hIyuSu"
+    >
+      <div
+        className="Controlsstyles__ActionBtn-sc-1qy04f2-9 Controlsstyles__StartBtn-sc-1qy04f2-11 kcvcuu"
+        onClick={[Function]}
+      />
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 iqMRns"
+      >
+        START
+      </h3>
+    </div>
+    <div
+      className="Controlsstyles__ToggleWrapper-sc-1qy04f2-5 jSBQeW"
+    >
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      >
+        OFF
+      </h3>
+      <div
+        className="Controlsstyles__SwitchWrapper-sc-1qy04f2-6 iJhJgk"
+        onClick={[Function]}
+      >
+        <div
+          className="Controlsstyles__Switch-sc-1qy04f2-7 bqrkBc"
+        />
+      </div>
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      >
+        ON
+      </h3>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Controls Component Should render without game active and score 1`] = `
+<div
+  className="Controlsstyles__Wrapper-sc-1qy04f2-0 hvVbvp"
+>
+  <audio
+    src="https://simongame.s3.amazonaws.com/errorSound.mp3"
+  />
+  <div
+    className="Controlsstyles__ScoreWrapper-sc-1qy04f2-1 cPQxNE"
+  >
+    <h1
+      className="Controlsstyles__Score-sc-1qy04f2-2 bLancD"
+    >
+      10
+    </h1>
+    <h3
+      className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+    >
+      COUNT
+    </h3>
+  </div>
+  <div
+    className="Controlsstyles__ActionsWrapper-sc-1qy04f2-4 cUmXVB"
+  >
+    <div
+      className="Controlsstyles__BtnWrapper-sc-1qy04f2-8 hIyuSu"
+    >
+      <div
+        className="Controlsstyles__ActionBtn-sc-1qy04f2-9 Controlsstyles__StartBtn-sc-1qy04f2-11 kcvcuu"
+        onClick={[Function]}
+      />
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 Controlsstyles__BtnLabel-sc-1qy04f2-10 iqMRns"
+      >
+        START
+      </h3>
+    </div>
+    <div
+      className="Controlsstyles__ToggleWrapper-sc-1qy04f2-5 jSBQeW"
+    >
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      >
+        OFF
+      </h3>
+      <div
+        className="Controlsstyles__SwitchWrapper-sc-1qy04f2-6 iJhJgk"
+        onClick={[Function]}
+      >
+        <div
+          className="Controlsstyles__Switch-sc-1qy04f2-7 bqrkBc"
+        />
+      </div>
+      <h3
+        className="Controlsstyles__Label-sc-1qy04f2-3 dUBbjf"
+      >
+        ON
+      </h3>
+    </div>
+  </div>
+</div>
+`;

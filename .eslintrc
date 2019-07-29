@@ -12,7 +12,8 @@
     "no-underscore-dangle": 0,
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "jsx-a11y/media-has-caption": 0
   },
   "globals": {
     "window": true,
@@ -26,7 +27,8 @@
     "expect": true,
     "describe": true,
     "it": true,
-    "jest": true
+    "jest": true,
+    "HTMLAudioElement": true
   },
   "parser": "babel-eslint"
 }

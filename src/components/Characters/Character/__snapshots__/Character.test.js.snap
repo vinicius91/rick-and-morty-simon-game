@@ -1,9 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link changes the class when hovered 1`] = `
+exports[`Character Component Should render default Active Character 1`] = `
+<div
+  className="Characterstyles__RegularCharacter-sc-77sfuh-0 Characterstyles__ActiveCharacter-sc-77sfuh-1 hLWHTt"
+  color="#ffffff"
+  onClick={[Function]}
+>
+  <audio
+    autoPlay={true}
+    src="#"
+  />
+</div>
+`;
+
+exports[`Character Component Should render default Character 1`] = `
 <div
   className="Characterstyles__RegularCharacter-sc-77sfuh-0 bdvRsH"
   color="#ffffff"
   onClick={[Function]}
-/>
+>
+  <audio
+    src="#"
+  />
+</div>
+`;
+
+exports[`Character Component Should render default Disabled Character 1`] = `
+<div
+  className="Characterstyles__RegularCharacter-sc-77sfuh-0 beBUvM"
+  color="#ffffff"
+  onClick={[Function]}
+>
+  <audio
+    src="#"
+  />
+</div>
 `;

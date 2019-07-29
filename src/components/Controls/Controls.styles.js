@@ -85,10 +85,6 @@ export const ActionsWrapper = styled.div`
 `;
 
 export const ToggleWrapper = styled.div`
-  @media (max-width: 480px) {
-    flex-basis: 100%;
-    margin: auto;
-  }
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -169,16 +165,5 @@ export const StartBtn = styled(ActionBtn)`
     inset 0 0 5px #fff, 
     0 0 10px #9f0f17,
     inset 0 0 10px #9f0f17;`
-      : ''}
-`;
-
-export const StrictBtn = styled(ActionBtn)`
-  background-color: #cca707;
-  ${props =>
-    props.active
-      ? ` box-shadow: 0 0 5px #fff, 
-    inset 0 0 5px #fff, 
-    0 0 10px #cca707,
-    inset 0 0 10px #cca707;`
       : ''}
 `;

@@ -18,13 +18,13 @@ export const fetchCharactersError = (payload: string): CharacterAction => ({
   payload
 });
 
-export function fetchCharacters(): CharacterAction {
+export const fetchCharacters = (): CharacterAction => {
   return dispatch => {
     dispatch({ type: characterActionTypes.FETCH_CHARACTER_START });
-    return getCharacters([5, 6, 7, 8])
+    return getCharacters()
       .then((fetchedCharacters: Characters) =>
         dispatch(fetchCharactersSuccess(fetchedCharacters))
       )
       .catch(err => dispatch(fetchCharactersError(err.message)));
   };
-}
+};

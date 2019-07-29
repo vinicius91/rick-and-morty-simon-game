@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters Component Should render with 4 characters 1`] = `
+<div
+  className="Charactersstyles__Wrapper-sc-1z0bbli-0 fJoBau"
+>
+  <div
+    className="Characterstyles__RegularCharacter-sc-77sfuh-0 bsoBDY"
+    color="#5fd382"
+    onClick={[Function]}
+  >
+    <audio
+      src="https://simongame.s3.amazonaws.com/simonSound1.mp3"
+    />
+  </div>
+  <div
+    className="Characterstyles__RegularCharacter-sc-77sfuh-0 cPrqPa"
+    color="#dc5245"
+    onClick={[Function]}
+  >
+    <audio
+      src="https://simongame.s3.amazonaws.com/simonSound2.mp3"
+    />
+  </div>
+  <div
+    className="Characterstyles__RegularCharacter-sc-77sfuh-0 iqrNRW"
+    color="#e6e564"
+    onClick={[Function]}
+  >
+    <audio
+      src="https://simongame.s3.amazonaws.com/simonSound3.mp3"
+    />
+  </div>
+  <div
+    className="Characterstyles__RegularCharacter-sc-77sfuh-0 dNIskn"
+    color="#038fe4"
+    onClick={[Function]}
+  >
+    <audio
+      src="https://simongame.s3.amazonaws.com/simonSound4.mp3"
+    />
+  </div>
+</div>
+`;
+
+exports[`Characters Component Should render with loading 1`] = `
+<div
+  className="Charactersstyles__Wrapper-sc-1z0bbli-0 fJoBau"
+>
+  <div
+    className="Loadingstyles__Wrapper-sc-1sj5pia-0 hHjlWI"
+  >
+    <div
+      className="Loadingstyles__Item-sc-1sj5pia-1 Loadingstyles__TopLeft-sc-1sj5pia-2 iOrcYc"
+    />
+    <div
+      className="Loadingstyles__Item-sc-1sj5pia-1 Loadingstyles__TopRight-sc-1sj5pia-3 WvMuE"
+    />
+    <div
+      className="Loadingstyles__Item-sc-1sj5pia-1 Loadingstyles__BottomLeft-sc-1sj5pia-4 lpmjCt"
+    />
+    <div
+      className="Loadingstyles__Item-sc-1sj5pia-1 Loadingstyles__BottomRight-sc-1sj5pia-5 fjUBIT"
+    />
+  </div>
+</div>
+`;
+
+exports[`Characters Component Should render without characters 1`] = `
+<div
+  className="Charactersstyles__Wrapper-sc-1z0bbli-0 fJoBau"
+>
+  
+</div>
+`;

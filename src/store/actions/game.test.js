@@ -1,5 +1,6 @@
 import { gameActionTypes } from '../../types/game';
 import * as actions from './game';
+import { generateSequence } from '../../lib/simonGame';
 
 describe('Game Actions', () => {
   it('Should create TOGGLE_GAME action', () => {
@@ -15,13 +16,16 @@ describe('Game Actions', () => {
   });
 
   it('Should create START_GAME action', () => {
-    const action = actions.startGame();
+    const ids = [1, 2, 3, 4];
+    const sequence = generateSequence(0, ids);
+    const action = actions.startGame(sequence, ids);
     expect(action.type).toEqual(gameActionTypes.START_GAME);
-    expect(action.payload).toBe(undefined);
+    expect(action.payload.ids).toEqual(ids);
+    expect(action.payload.sequence).toEqual(sequence);
   });
 
-  it('Should create PLAY_SEQUENCE action', () => {
-    const action = actions.playSequence();
+  it.skip('Should create PLAY_SEQUENCE action', () => {
+    const action = actions.playSequence([1, 4, 2, 3]);
     expect(action.type).toEqual(gameActionTypes.PLAY_SEQUENCE);
     expect(action.payload).toBe(undefined);
   });

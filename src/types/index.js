@@ -8,7 +8,10 @@ import type { GameState, GameAction } from './game';
 
 export type ReduxInitAction = { type: '@@INIT' };
 
-export type State = CharacterState | GameState;
+export type State = {
+  characters: CharacterState,
+  game: GameState
+};
 
 export type Action = ReduxInitAction | CharacterAction | GameAction;
 

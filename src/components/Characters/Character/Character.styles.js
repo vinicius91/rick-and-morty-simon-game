@@ -1,4 +1,18 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const clickMixin = css`
+  :hover {
+    transform: translate(2px, 2px);
+  }
+
+  :active {
+    transform: translate(4px, 4px);
+    box-shadow: ${props => `0 0 5px #fff, 
+    inset 0 0 5px #fff, 
+    0 0 20px ${props.color},
+    inset 0 0 20px ${props.color}`};
+  }
+`;
 
 export const RegularCharacter = styled.div`
   width: 30vw;
@@ -49,17 +63,7 @@ export const RegularCharacter = styled.div`
     3px 2px ${props.colorDark}, 2px 3px ${props.color}, 4px 3px ${props.colorDark}, 3px 4px ${props.color},
     5px 4px ${props.colorDark}, 4px 5px ${props.color}, 6px 5px ${props.colorDark}, 5px 6px ${props.color}`};
 
-  :hover {
-    transform: translate(2px, 2px);
-  }
-
-  :active {
-    transform: translate(4px, 4px);
-    box-shadow: ${props => `0 0 5px #fff, 
-    inset 0 0 5px #fff, 
-    0 0 20px ${props.color},
-    inset 0 0 20px ${props.color}`};
-  }
+  ${props => (props.enabled ? clickMixin : '')}
 `;
 
 export const ActiveCharacter = styled(RegularCharacter)`

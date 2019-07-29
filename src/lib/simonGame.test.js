@@ -1,4 +1,8 @@
-import { generateSequence, getRandomNumberFromArray } from './simonGame';
+import {
+  generateSequence,
+  getRandomNumberFromArray,
+  iterateSequence
+} from './simonGame';
 
 describe('Simon Game Structure', () => {
   it('Should tet a random number from array', () => {

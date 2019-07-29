@@ -1,6 +1,8 @@
 // @flow
 
-type Ids = Array<number>;
+import type { Ids, Sequence } from '../types/game';
+
+let timeoutRef = [];
 
 export const getRandomNumberFromArray = (ids: Ids): number => {
   const min = 0;
@@ -12,7 +14,7 @@ export const getRandomNumberFromArray = (ids: Ids): number => {
 const addItemToSequence = (
   quantity: number,
   ids: Ids,
-  sequence: Array<number> = []
+  sequence?: Sequence = []
 ) => {
   if (quantity > sequence.length) {
     sequence.push(getRandomNumberFromArray(ids));
@@ -21,7 +23,36 @@ const addItemToSequence = (
   return sequence;
 };
 
-export const generateSequence = (score: number, ids: Ids): Ids => {
+export const generateSequence = (
+  score: number,
+  ids: Ids,
+  sequence?: Sequence = []
+): Ids => {
   const quantity = score + 1;
-  return addItemToSequence(quantity, ids);
+  return addItemToSequence(quantity, ids, sequence);
+};
+
+export const iterateSequence = (
+  sequence: Sequence,
+  callback: (id: number) => void
+) => {
+  sequence.forEach((item, i) => {
+    const activate = setTimeout(() => callback(item), (i + 1) * 1500);
+    setTimeout(() => callback(0), (i + 1.5) * 1500);
+    timeoutRef.push(activate);
+  });
+};
+
+export const isCorrectClick = (
+  sequence: Sequence,
+  currentIndex: number,
+  id: number
+): boolean => {
+  if (sequence[currentIndex] === id) {
+    return true;
+  }
+  timeoutRef.forEach(timeoutId => clearTimeout(timeoutId));
+  timeoutRef = [];
+  clearTimeout();
+  return false;
 };
